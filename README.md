@@ -4,9 +4,9 @@
 The primary aim of the "Simulating Model Drift" project is to demonstrate the phenomenon of model deterioration or drift in performance when exposed to unseen or slightly altered data. This project provides insights into how machine learning models, which perform well during their initial training, might degrade in accuracy and reliability over time due to changes in the data distribution.
 
 #**Table of Contents**
-###* <ins>**Introduction**</ins>
-###* <ins>**What is Model Drift?**</ins>
-###* <ins>**Project Scope**</ins>
+* <ins>**Introduction**</ins>
+* <ins>**What is Model Drift?**</ins>
+  * <ins>**Project Scope**</ins>
 ###* <ins>**Usage**</ins>
 ###* <ins>**Implementation**</ins>
 
@@ -28,15 +28,15 @@ Model drift refers to the deterioration in the performance of a machine or Deep 
 **Project Scope**
 The "Simulating Model Drift" project aims to create a controlled environment for observing and studying the effects of changes in input data resulting in model drift. It provides a framework to:
 
-[^1]:**Generate Data**: Create datasets with controlled variations to simulate changes in image data .
+[^1]: **Generate Data**: Create datasets with controlled variations to simulate changes in image data .
 
 **[^1]:Train Initial Model:** finetune a pretrained Resnet18 model on the initial dataset to establish a baseline performance.
 
-**[^1]:Introduce Drift:** Gradually introduce drift by modifying the data and introducing new data patterns (data augmentation).
+**[^1]: Introduce Drift:** Gradually introduce drift by modifying the data and introducing new data patterns (data augmentation).
 
-**[^1]:Evaluate Drift:** Monitor the model's performance over time and analyze how its accuracy and reliability change as drift is introduced.
+**[^1]: Evaluate Drift:** Monitor the model's performance over time and analyze how its accuracy and reliability change as drift is introduced.
 
-**[^1]:Visualize Results:** Visualize the impact of model drift through graphs, charts, and performance metrics.
+**[^1]: Visualize Results:** Visualize the impact of model drift through graphs, charts, and performance metrics.
 
 **Implementation**
 The project is implemented in Python, utilizing popular machine learning libraries such as pytorch and matplotlib. The codebase is organized into modules for data generation, model training, drift introduction(data augmentation), evaluation, and visualization.

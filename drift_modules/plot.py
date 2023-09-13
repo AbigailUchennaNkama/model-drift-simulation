@@ -3,7 +3,7 @@ import numpy as np
 from torchvision.utils import make_grid
 # functions to show an image
 batch_size =64
-from drift_module.data_setup import *
+import data_setup
 _, class_names, _ = create_dataloaders()
 
 

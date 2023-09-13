@@ -1,6 +1,7 @@
 import pandas as pd
-from drift_module.data_setup import *
+from data_setup import *  
 from tqdm.auto import tqdm
+from torchvision import  transforms
 manual_transforms = transforms.Compose([
         transforms.Resize((224, 224)),
         transforms.ToTensor(),

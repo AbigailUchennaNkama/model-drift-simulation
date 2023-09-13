@@ -1,6 +1,7 @@
 import pandas as pd
 from tqdm.auto import tqdm
 from torchvision import  transforms
+import torch
 manual_transforms = transforms.Compose([
         transforms.Resize((224, 224)),
         transforms.ToTensor(),

@@ -3,9 +3,6 @@ import numpy as np
 from torchvision.utils import make_grid
 # functions to show an image
 batch_size =64
-import data_setup
-_, class_names, _ = create_dataloaders()
-
 
 def show_image(dataloader):
   dataiter = iter(dataloader)

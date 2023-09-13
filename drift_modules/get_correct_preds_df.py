@@ -1,5 +1,4 @@
 import pandas as pd
-from data_setup import *  
 from tqdm.auto import tqdm
 from torchvision import  transforms
 manual_transforms = transforms.Compose([
@@ -10,6 +9,8 @@ manual_transforms = transforms.Compose([
     ])
 # Get all test data paths
 from pathlib import Path
+
+data_dir = "/content/data/cifar10"
 test_data_paths = list(Path(data_dir+"/test").glob("*/*.png"))
 test_labels = [path.parent.stem for path in test_data_paths]
 

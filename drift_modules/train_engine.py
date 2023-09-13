@@ -10,12 +10,12 @@ from tempfile import TemporaryDirectory
 from torch.types import Device
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-import data_setup
+# import data_setup
 
-dataloaders, class_names, dataset_sizes = data_setup.create_dataloaders()
+# dataloaders, class_names, dataset_sizes = data_setup.create_dataloaders()
 
 
-def train_model(model, criterion, optimizer, scheduler, num_epochs=10):
+def train_model(model, criterion, optimizer, scheduler, dataloaders, num_epochs=10):
     since = time.time()
 
     # Create a temporary directory to save training checkpoints

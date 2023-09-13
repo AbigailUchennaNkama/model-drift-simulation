@@ -10,5 +10,4 @@ def show_image(dataloader):
   img = make_grid(img, nrow=12)
   img = img / 2 + 0.5     # unnormalize
   npimg = img.numpy()     #convert to numpy
-  plt.imshow(np.transpose(npimg, (1, 2, 0)))
   plt.show()

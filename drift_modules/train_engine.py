@@ -10,11 +10,9 @@ from tempfile import TemporaryDirectory
 from torch.types import Device
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-from drift_module import data_setup
+import data_setup
 
 dataloaders, class_names, dataset_sizes = data_setup.create_dataloaders()
-
-# ... (rest of your code)
 
 
 def train_model(model, criterion, optimizer, scheduler, num_epochs=10):

@@ -19,7 +19,7 @@ manual_transforms = transforms.Compose([
         transforms.Normalize(mean=[0.485, 0.456, 0.406],
                             std=[0.229, 0.224, 0.225])
     ])
-  
+
 
 data_dir = "/content/data/cifar10"
 
@@ -27,25 +27,24 @@ def get_data():
 
   """Creates training and testing DataLoaders.
 
-    Takes in a training directory and testing directory path and turns
+    Takes in directory of all images correctly predicted by the model and turns
     them into PyTorch Datasets and then into PyTorch DataLoaders.
 
     Returns:
-      A tuple of (train_dataloader, test_dataloader, class_names).
+      A tuple of (model_dataloader, class_names).
       Where class_names is a list of the target classes.
     Example usage:
-        val_dataloader, train_dataloader, class_names = \
-        = create_dataloaders()
+        model_dataloader, class_names = \
+        model_dataloaders()
   """
 
-  dataset = ImageFolder(data_dir+"/train")
 
-  correct_test_dir = ImageFolder(data_dir+"/correct_test", transform=manual_transforms)
+
+  model_data_dir = ImageFolder(data_dir+"/correct_test", transform=manual_transforms)
 
   # Create dataloaders
-  correct_test_dir = ImageFolder(data_dir+"/correct_test", transform=manual_transforms)
+  model_dataloader = DataLoader(model_data_dir, batch_size=64, shuffle=False)
 
-  #dataset_sizes = {x: len(dataloader.dataset) for x, dataloader in dataloaders.items()}
-  class_names = correct_test_dir.classes
+  class_names = model_data_dir.classes
 
-  return dataloaders, class_names
+  return model_dataloader, class_names

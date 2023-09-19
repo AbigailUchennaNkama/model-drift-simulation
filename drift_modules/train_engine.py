@@ -15,7 +15,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 # dataloaders, class_names, dataset_sizes = data_setup.create_dataloaders()
 
 
-def train_model(model, criterion, optimizer, scheduler, dataloaders, dataset_sizes, num_epochs=10):
+def train_model(model, criterion, optimizer, scheduler, dataloaders, dataset_sizes, num_epochs):
     since = time.time()
 
     # Create a temporary directory to save training checkpoints

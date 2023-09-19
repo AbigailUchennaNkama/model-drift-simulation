@@ -15,13 +15,13 @@ data_dir = "./data/cifar10"
 test_data_paths = list(Path(data_dir+"/train").glob("*/*.png"))
 
 # Exclude the "dog" class
-test_data_paths = [path for path in test_data_paths if path.parent.stem != "airplain"]
+test_data_paths = [path for path in test_data_paths if path.parent.stem != "truck"]
 test_labels = [path.parent.stem for path in test_data_paths]
 
 data_dir = "./data/cifar9"
 train_dir = os.path.join(data_dir, "train")
 # Define the classes to include (excluding "dog")
-included_classes = ['automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+included_classes = ['airplain','automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship']
 
 # Create subfolders for included classes
 for class_name in included_classes:

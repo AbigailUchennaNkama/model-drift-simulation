@@ -15,7 +15,7 @@ data_dir = "./data/cifar10"
 test_data_paths = list(Path(data_dir+"/train").glob("*/*.png"))
 
 # Exclude the "dog" class
-test_data_paths = [path for path in test_data_paths if path.parent.stem != "dog"]
+test_data_paths = [path for path in test_data_paths if path.parent.stem != "airplain"]
 test_labels = [path.parent.stem for path in test_data_paths]
 
 data_dir = "./data/cifar9"

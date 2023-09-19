@@ -23,7 +23,11 @@ data_dir = "./data/cifar9"
 train_dir = os.path.join(data_dir, "train")
 
 # Define the classes to include (excluding "dog")
+<<<<<<< HEAD
 included_classes = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'frog', 'horse', 'ship', 'truck']
+=======
+included_classes = ['airplaine', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship']
+>>>>>>> 20a06dc3437c0eba835935e5b9dd1c9c45abd592
 
 # Create subfolders for included classes
 for class_name in included_classes:

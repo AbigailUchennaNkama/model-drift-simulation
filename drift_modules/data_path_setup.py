@@ -26,7 +26,6 @@ data_transforms = {
     ]),
 }
 
-data_dir = "/content/data/cifar10"
 
 def create_dataloaders(data_paths):
 
@@ -42,11 +41,11 @@ def create_dataloaders(data_paths):
         val_dataloader, train_dataloader, class_names = \
         = create_dataloaders()
   """
-
-  train_size = 45000
-  val_size = 5000
-
+ 
   dataset = ImageFolder(data_paths)
+
+  val_size = 5000
+  train_size = len(dataset) - val_size
 
   # Split dataset into train and val based on specified sizes
   train_dataset, val_dataset = torch.utils.data.random_split(dataset, [train_size, val_size])

@@ -21,7 +21,7 @@ test_labels = [path.parent.stem for path in test_data_paths]
 data_dir = "./data/cifar9"
 train_dir = os.path.join(data_dir, "train")
 # Define the classes to include (excluding "dog")
-included_classes = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'frog', 'horse', 'ship', 'truck']
+included_classes = ['automobile', 'bird', 'cat', 'deer', 'dog' 'frog', 'horse', 'ship', 'truck']
 
 # Create subfolders for included classes
 for class_name in included_classes:

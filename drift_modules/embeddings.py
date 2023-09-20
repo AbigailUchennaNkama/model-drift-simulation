@@ -25,7 +25,7 @@ def get_embeddings(model,data_path):
     model.eval()
 
     # Extract embeddings
-    embeddings, labels, img = [], [], []
+    embeddings, labels, img = [], []
     with torch.no_grad():
         for images, lbls in testloader:
             images,lbls = images.to(device), lbls.to(device)

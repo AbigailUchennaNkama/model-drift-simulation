@@ -44,7 +44,7 @@ def create_dataloaders(val_size, data_paths):
  
   dataset = ImageFolder(data_paths)
 
-  val_size = 5000
+  val_size = val_size
   train_size = len(dataset) - val_size
 
   # Split dataset into train and val based on specified sizes

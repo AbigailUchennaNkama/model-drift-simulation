@@ -27,7 +27,7 @@ data_transforms = {
 }
 
 
-def create_dataloaders(data_paths):
+def create_dataloaders(val_size, data_paths):
 
   """Creates training and testing DataLoaders.
 

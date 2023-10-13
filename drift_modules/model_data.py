@@ -21,11 +21,9 @@ manual_transforms = transforms.Compose([
     ])
 
 
-data_dir = "/content/data/cifar10"
+def get_data(data_path):
 
-def get_data():
-
-  """Creates training and testing DataLoaders.
+  """Creates DataLoaders.
 
     Takes in directory of all images correctly predicted by the model and turns
     them into PyTorch Datasets and then into PyTorch DataLoaders.
@@ -40,7 +38,7 @@ def get_data():
 
 
 
-  model_data_dir = ImageFolder(data_dir+"/correct_test", transform=manual_transforms)
+  model_data_dir = ImageFolder(data_path, transform=manual_transforms)
 
   # Create dataloaders
   model_dataloader = DataLoader(model_data_dir, batch_size=64, shuffle=False)

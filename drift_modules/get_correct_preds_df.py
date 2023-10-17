@@ -18,7 +18,7 @@ def pred_and_store(data_dir, model, transform, class_names, device):
   test_data_paths = list(Path(data_dir+"/test").glob("*/*.jpg"))
   test_labels = [path.parent.stem for path in test_data_paths]
   test_pred_list = []
-  for path in tqdm(test_paths):
+  for path in tqdm(test_data_paths):
     # Create empty dict to store info for each sample
     pred_dict = {}
 

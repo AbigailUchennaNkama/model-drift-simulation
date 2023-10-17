@@ -11,8 +11,8 @@ from torchvision import  transforms
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 
-from drift_modules.get_correct_preds_df import pred_and_store
-from drift_modules.load_model import load_custom_pretrained_model
+from get_correct_preds_df import pred_and_store
+from load_model import load_custom_pretrained_model
 
 
 manual_transforms = transforms.Compose([

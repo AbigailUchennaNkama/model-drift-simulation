@@ -46,7 +46,7 @@ def get_subset(image_path=data_path,
 
         # Get random subset of target classes image ID's
         number_to_sample = round(amount * len(labels))
-        print(f"[INFO] Getting random subset of {number_to_sample} images for {data_split}...")
+        #print(f"[INFO] Getting random subset of {number_to_sample} images for {data_split}...")
         sampled_images = random.sample(labels, k=number_to_sample)
 
         # Apply full paths

@@ -25,7 +25,7 @@ manual_transforms = transforms.Compose([
 
 
 #get dataloaders and class names
-loaded_food_model_c15 = load_custom_pretrained_model(model_path='./food_model.pth', num_classes=15)#load pretrained model
+dataloaders, class_names, dataset_sizes =  create_dataloaders(val_size=2000, data_paths='./food-15/train')
 #load pretrained model
 loaded_food_model_c15 = load_custom_pretrained_model(model_path='./food_model.pth', num_classes=15)
 

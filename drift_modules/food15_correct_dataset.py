@@ -15,7 +15,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 #from drift_modules.data_path_setup import create_dataloaders
 from get_correct_preds_df import pred_and_store
 from load_model import load_custom_pretrained_model
-from drift_modules.data_path_setup import create_dataloaders
+from data_path_setup import create_dataloaders
 
 
 manual_transforms = transforms.Compose([

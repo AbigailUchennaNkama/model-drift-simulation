@@ -2,6 +2,8 @@ import pandas as pd
 from tqdm.auto import tqdm
 from torchvision import  transforms
 import torch
+device = "cuda" if torch.cuda.is_available() else "cpu"
+
 manual_transforms = transforms.Compose([
         transforms.Resize((224, 224)),
         transforms.ToTensor(),
@@ -11,12 +13,13 @@ manual_transforms = transforms.Compose([
 # Get all test data paths
 from pathlib import Path
 
-data_dir = "/content/data/cifar10"
 test_data_paths = list(Path(data_dir+"/test").glob("*/*.png"))
 test_labels = [path.parent.stem for path in test_data_paths]
 
 # Create a function to return a list of dictionaries with sample, label, prediction, pred prob
-def pred_and_store(test_paths, model, transform, class_names, device):
+def pred_and_store(data_dir,test_paths, model, transform, class_names, device):
+  test_data_paths = list(Path(data_dir+"/test").glob("*/*.png"))
+  test_labels = [path.parent.stem for path in test_data_paths]
   test_pred_list = []
   for path in tqdm(test_paths):
     # Create empty dict to store info for each sample

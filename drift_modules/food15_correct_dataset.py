@@ -13,6 +13,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 
 from get_correct_preds_df import pred_and_store
 from load_model import load_custom_pretrained_model
+from data_path_setup import create_dataloaders
 
 
 manual_transforms = transforms.Compose([
@@ -22,8 +23,10 @@ manual_transforms = transforms.Compose([
                             std=[0.229, 0.224, 0.225])
     ])
 
-#load pretrained model
 
+#get dataloaders and class names
+loaded_food_model_c15 = load_custom_pretrained_model(model_path='./food_model.pth', num_classes=15)#load pretrained model
+#load pretrained model
 loaded_food_model_c15 = load_custom_pretrained_model(model_path='./food_model.pth', num_classes=15)
 
 class_names=["pizza", "steak", "sushi", "spaghetti_bolognese",

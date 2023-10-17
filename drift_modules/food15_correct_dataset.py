@@ -1,4 +1,3 @@
-%%writefile food15_correct_dataset.py
 import os
 import torch
 from timeit import default_timer as timer

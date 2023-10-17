@@ -54,7 +54,7 @@ for file_path in correct_pred_img:
     # Append the file path to the corresponding category list
     category_lists[category].append(file_path)
 
-output_dir = '/content/data/food-15/correct_test/'
+output_dir = './food-15/correct_test/'
 
 # Create the output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)

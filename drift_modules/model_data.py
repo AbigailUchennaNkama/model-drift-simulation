@@ -21,7 +21,7 @@ manual_transforms = transforms.Compose([
     ])
 
 
-def get_data(data_path):
+def get_data(data_path, transform=manual_transforms):
 
   """Creates DataLoaders.
 

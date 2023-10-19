@@ -4,11 +4,17 @@ import shutil
 import torch
 import torchvision
 import torchvision.datasets as datasets
-import torchvision.transforms as transforms
 import random
 import pathlib
+from timeit import default_timer as timer
+from torch.types import Device
+from shutil import copy
+from collections import defaultdict
+import pandas as pd
+from tqdm.auto import tqdm
+from torchvision import  transforms
+device = "cuda" if torch.cuda.is_available() else "cpu"
 
-import pathlib
 data_dir = pathlib.Path("./data")
 
 
@@ -86,25 +92,11 @@ for image_split in label_splits.keys():
         print(f"[INFO] Copying {image_path} to {dest_dir}...")
         shutil.copy(image_path, dest_dir)
 
-
-
-import os
-import torch
-from timeit import default_timer as timer
-from torch.types import Device
-from shutil import copy
-from collections import defaultdict
-import pandas as pd
-from pathlib import Path
-from tqdm.auto import tqdm
-from torchvision import  transforms
-device = "cuda" if torch.cuda.is_available() else "cpu"
-
-
-#from drift_modules.data_path_setup import create_dataloaders
-from drift_modules.get_correct_preds_df import pred_and_store
-from drift_modules.load_model import load_custom_pretrained_model
-from drift_modules.data_path_setup import create_dataloaders
+# test and creat folders with correct predictions
+from data_path_setup import create_dataloaders
+from get_correct_preds_df import pred_and_store
+from load_model import load_custom_pretrained_model
+from data_path_setup import create_dataloaders
 
 
 manual_transforms = transforms.Compose([

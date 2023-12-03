@@ -7,11 +7,7 @@ from collections import defaultdict
 import pandas as pd
 from pathlib import Path
 from tqdm.auto import tqdm
-<<<<<<< HEAD
-from torchvision import  transforms
-=======
 from torchvision import  transforms 
->>>>>>> 58450b0b37766e6fe377ef256054f4a4953e3c6f
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 
